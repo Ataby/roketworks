@@ -6,19 +6,15 @@ import AuthDetails from "./AuthDetails";
 import { Toaster } from "react-hot-toast";
 import toast from "react-hot-toast";
 
-import { useDispatch } from "react-redux";
-
-
+ 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [passwordAgain, setPasswordAgain] = useState("");
-  const provider = new GoogleAuthProvider();
+   const provider = new GoogleAuthProvider();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-//     const user=createUserWithEmailAndPassword(auth, email, password);
-//     dispatch(loginHandle(user));
+ 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
@@ -27,8 +23,7 @@ const Signup = () => {
         console.log(error, "errorr");
         toast.error("Kullanıcı adı veya şifre hatalı!",error.message);
       });
-    // Signup işlemi burada gerçekleştirilecek
-    console.log("Signup:", { email, password });
+     console.log("Signup:", { email, password });
   };
 
   const signGoogle = async () => {

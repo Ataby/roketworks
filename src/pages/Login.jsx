@@ -1,22 +1,18 @@
 // src/components/Login.js
 import React, { useState } from "react";
 import {useNavigate } from "react-router-dom";
-import { auth } from "../firebase/firebase";
-import { getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-//import { doSignInWithGoogle } from "../firebase/auth";
-import AuthDetails from "./AuthDetails";
+ import { getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+ import AuthDetails from "./AuthDetails";
 import toast from "react-hot-toast";
-import { useDispatch } from "react-redux";
-import { login as loginHandle } from "../store/auth";
+ 
+ 
 
 
 const Login = () => {
   const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
-  //   const [isSignIn, setIsSignIn] = useState(false);
-  //   const [errorMessage, setErrorMessage] = useState("");
-  const dispatch = useDispatch();
-  const auth = getAuth();
+ 
+   const auth = getAuth();
    const provider = new GoogleAuthProvider();
 
 
